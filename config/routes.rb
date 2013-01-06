@@ -1,4 +1,6 @@
 Faves::Application.routes.draw do
+  resources :posts
+
   get "dashboard/index"
 
   resources :articles
