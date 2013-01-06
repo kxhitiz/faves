@@ -19,14 +19,15 @@ ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
-namespace :precompile_assets do
+namespace :after_update_commands do
   desc "asset precompilation"
   task :do, roles: :app do
+    deploy.migrate
     run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
   end
 end
 
-after 'deploy:update_code', 'precompile_assets:do'
+after 'deploy:update_code', 'after_update_commands:do'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
