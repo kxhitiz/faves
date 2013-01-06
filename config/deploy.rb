@@ -22,7 +22,7 @@ after "deploy", "deploy:cleanup" # keep only the last 5 releases
 namespace :after_update_commands do
   desc "asset precompilation"
   task :do, roles: :app do
-    deploy.migrate
+    run "cd #{release_path}; RAILS_ENV=production bundle exec rake db:migrate"
     run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
   end
 end
