@@ -37,7 +37,7 @@ namespace :deploy do
   end
   after "deploy:setup", "deploy:setup_config"
 
-  task :precompile_assets do
+  task :precompile_assets, roled: :app do
     run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
   end
 
