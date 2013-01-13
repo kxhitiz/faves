@@ -46,7 +46,13 @@
           </a>
           <%= link_to "Faves!", root_path, :class => "brand" %>
           <div class="container-fluid nav-collapse">
-            <ul class="nav">
+	      <ul class="nav">
+	      <% unless current_user %>
+	      	<li><%= link_to "Sign in", new_user_session_path %></li>
+              	<li><%= link_to "Sign up", new_user_registration_path %></li>	
+	      <% else %>
+		      <li><%= link_to "Sign out".html_safe, destroy_user_session_path, :method => :delete  %></li>
+	      <% end %>
               <li><%= link_to "<i class = 'icon-globe'></i>Lets talk".html_safe, posts_path  %></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -68,7 +74,7 @@
         </div><!--/span-->
         <div class="span9">
           <%# TODO Needs lookup later %>
-          <%# bootstrap_flash %>
+          <%= bootstrap_flash %>
           <%= yield %>
         </div>
       </div><!--/row-->

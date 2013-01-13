@@ -1,0 +1,11 @@
+<h2>List of faves</h2>
+
+<ul>
+  <% @faves.each do |fave| %>
+    <li>
+      <%= fave.url %>
+    </li>
+  <% end %>
+</ul>
+
+<%= render "form" %>

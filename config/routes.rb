@@ -1,9 +1,19 @@
 Faves::Application.routes.draw do
+  get "faves/index"
+
+  devise_for :users
+
   resources :posts
 
   get "dashboard/index"
 
   resources :articles
+
+  resources :users do
+    collection do
+      resources :faves
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
