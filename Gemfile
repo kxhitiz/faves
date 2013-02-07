@@ -5,7 +5,6 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 gem 'rb-readline'
 gem 'devise'
 gem 'pry'
@@ -36,6 +35,8 @@ gem 'unicorn'
 
 # Deploy with Capistrano
 gem 'capistrano'
+
+gem 'rvm-capistrano'
 
 # To use debugger
 # gem 'debugger'
