@@ -35,6 +35,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: faves_production
+  host: localhost
   pool: 5
   username: faves
   password: siliconnepal
