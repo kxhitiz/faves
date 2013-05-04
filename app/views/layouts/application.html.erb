@@ -36,7 +36,7 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fluid-top">
+    <div class="navbar ">
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -46,7 +46,7 @@
           </a>
           <%= link_to "Faves!", root_path, :class => "brand" %>
           <div class="container-fluid nav-collapse">
-	      <ul class="nav">
+	      <ul class="nav pull-right">
 	      <% unless current_user %>
 	      	<li><%= link_to "Sign in", new_user_session_path %></li>
               	<li><%= link_to "Sign up", new_user_registration_path %></li>	
