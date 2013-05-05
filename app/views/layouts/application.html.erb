@@ -40,20 +40,7 @@
       <div class="container">
       <div class="row-fluid">
         <% if current_user %>
-        <div class="span3">
-          <div class="well well-small sidebar-nav">
-            <ul class="nav nav-list ">
-              <li class="nav-header"></li>
-              <li><%= link_to "Favorites", faves_path %></li>
-              <li><%= link_to "Account", "#"  %></li>
-              <li><%= link_to "Settings", "#"  %></li>
-
-              <li class="divider"></li>
-              
-              <li><%= link_to "Logout", '' %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+          <%= render 'layouts/sidebar'%>
         <% end %>
 
         <div class=" <% if current_user %>span9 <% end %>">
