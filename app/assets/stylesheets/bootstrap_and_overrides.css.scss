@@ -6,6 +6,9 @@
   =require twitter-bootstrap-static/fontawesome
   */
 .navbar{
+  // to make sure navbar doesnt overlap content
+  margin-bottom:15px;
+  
   .navbar-inner{
     background-image:none;
     background-color:#2980b9;
