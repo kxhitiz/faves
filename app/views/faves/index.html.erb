@@ -6,16 +6,24 @@
 <% else %>
   <table class="table table-striped" border="0">
     <thead>
-      <th>#</th>
-      <th>Title</th>
+      <th>Item</th>
       <th>Added</th>
+      <th>Action</th>
     </thead>
     <tbody>
       <% @current_user.faves.each do |fave| %>
         <tr>
-          <td>-</td>
-          <td><%= link_to fave.page_title, fave.url, target: "_blank" %></td>
+          <td>
+            <%= link_to fave.page_title, fave.url, target: "_blank" %>
+            <br />
+            <p class="muted">
+            <%= fave.description %>
+            </p>
+          </td>
+
           <td><%= fave.created_at.strftime("%m/%d/%y")  %></td>
+
+          <td><%= link_to "Edit", '#',class:'btn btn-mini',style:'margin-right:5px;' %><%= link_to "Delete", '#',class:'btn btn-mini' %></td>
         </tr>
       <% end %>
     </tbody>

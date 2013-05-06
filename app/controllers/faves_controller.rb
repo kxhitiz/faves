@@ -13,6 +13,7 @@ class FavesController < ApplicationController
     page=Fave.new
     page.url=params["fave"][:url]
     page.page_title=get_url_title(params["fave"][:url])
+    page.description=params['fave'][:description]
     page.user_id=current_user.id
 
     if page.save

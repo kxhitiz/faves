@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113155851) do
+ActiveRecord::Schema.define(:version => 20130506082412) do
 
   create_table "articles", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(:version => 20130113155851) do
 
   create_table "faves", :force => true do |t|
     t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
+    t.string   "page_title"
+    t.string   "description"
   end
 
   create_table "posts", :force => true do |t|
