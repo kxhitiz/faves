@@ -1,4 +1,6 @@
-<h2>List of faves</h2>
+<div class="page-header">
+  <h3>List of favorites</h3>  
+</div>
 <% if current_user.faves.empty? %>
   <div class="alert alert-info">
     You dont have any favorites yet.
@@ -17,12 +19,10 @@
             <%= link_to fave.page_title, fave.url, target: "_blank" %>
             <br />
             <p class="muted">
-            <%= fave.description %>
+            <%= truncate fave.description,length:200 %>
             </p>
           </td>
-
           <td><%= fave.created_at.strftime("%m/%d/%y")  %></td>
-
           <td><%= link_to "Edit", '#',class:'btn btn-mini',style:'margin-right:5px;' %><%= link_to "Delete", '#',class:'btn btn-mini' %></td>
         </tr>
       <% end %>
