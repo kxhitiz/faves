@@ -1,21 +1,26 @@
 <h2>List of faves</h2>
-
-<table class="table table-striped" border="0">
-  <thead>
-    <th>#</th>
-    <th>Title</th>
-    <th>Added</th>
-  </thead>
-  <tbody>
-    <% @current_user.faves.each do |fave| %>
-      <tr>
-        <td>-</td>
-        <td><%= link_to fave.page_title, fave.url, target: "_blank" %></td>
-        <td><%= fave.created_at.strftime("%m/%d/%y")  %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if current_user.faves.empty? %>
+  <div class="alert alert-info">
+    You dont have any favorites yet.
+  </div>
+<% else %>
+  <table class="table table-striped" border="0">
+    <thead>
+      <th>#</th>
+      <th>Title</th>
+      <th>Added</th>
+    </thead>
+    <tbody>
+      <% @current_user.faves.each do |fave| %>
+        <tr>
+          <td>-</td>
+          <td><%= link_to fave.page_title, fave.url, target: "_blank" %></td>
+          <td><%= fave.created_at.strftime("%m/%d/%y")  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 <div class="well well-small">
   <%= render "form" %>
 </div>
