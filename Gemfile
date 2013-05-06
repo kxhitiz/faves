@@ -8,6 +8,8 @@ gem 'rails', '3.2.6'
 gem 'rb-readline'
 gem 'devise'
 gem 'pry'
+gem 'annotate'
+gem 'nokogiri'
 
 # postgres adapter
 gem 'activerecord-postgresql-adapter'

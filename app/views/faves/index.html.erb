@@ -1,11 +1,21 @@
 <h2>List of faves</h2>
 
-<ul>
-  <% @faves.each do |fave| %>
-    <li>
-      <%= fave.url %>
-    </li>
-  <% end %>
-</ul>
-
-<%= render "form" %>
+<table class="table table-striped" border="0">
+  <thead>
+    <th>#</th>
+    <th>Title</th>
+    <th>Added</th>
+  </thead>
+  <tbody>
+    <% @current_user.faves.each do |fave| %>
+      <tr>
+        <td>-</td>
+        <td><%= link_to fave.page_title, fave.url, target: "_blank" %></td>
+        <td><%= fave.created_at.strftime("%m/%d/%y")  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="well well-small">
+  <%= render "form" %>
+</div>
