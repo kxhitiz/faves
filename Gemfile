@@ -11,6 +11,11 @@ gem 'pry'
 gem 'annotate'
 gem 'nokogiri'
 
+group :development do
+  gem 'guard'
+  gem 'guard-livereload'
+end
+
 # postgres adapter
 gem 'activerecord-postgresql-adapter'
 
