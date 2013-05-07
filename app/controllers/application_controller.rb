@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper_method :current_user
 
-  def after_sign_in_path_for(resource)
-    faves_index_path
+  # For now, until authentication is implemented,
+  # current user is always first user from db
+  def current_user
+  	@current_user ||= User.first
   end
 end

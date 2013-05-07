@@ -1,8 +1,6 @@
 Faves::Application.routes.draw do
   get "faves/index"
 
-  devise_for :users
-
   resources :posts
 
   get "dashboard/index"

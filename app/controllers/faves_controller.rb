@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
+
 class FavesController < ApplicationController
-  before_filter :authenticate_user!
   
   def index
     @faves = current_user.faves.all

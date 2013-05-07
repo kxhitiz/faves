@@ -13,7 +13,7 @@
       <th width='85px'>Action</th>
     </thead>
     <tbody>
-      <% @current_user.faves.each do |fave| %>
+      <% current_user.faves.each do |fave| %>
         <tr>
           <td>
             <%= link_to fave.page_title, fave.url, target: "_blank" %>

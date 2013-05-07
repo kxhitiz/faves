@@ -6,7 +6,7 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'rb-readline'
-gem 'devise'
+
 gem 'pry'
 gem 'annotate'
 gem 'nokogiri'
