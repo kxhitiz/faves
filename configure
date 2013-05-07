@@ -1,0 +1,7 @@
+#!/bin/bash -x
+# To Copy and rename the yml files in the config directory:-
+#   * Type './configure' from ~/cloudfactory directory in terminal.
+#   * (or) Double click 'me' in Finder.
+
+
+cp config/database.example.yml config/database.yml
