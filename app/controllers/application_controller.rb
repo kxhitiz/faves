@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   # For now, until authentication is implemented,
   # current user is always first user from db
   def current_user
-  	@current_user ||= User.first
+    @current_user ||= User.first
   end
 end
