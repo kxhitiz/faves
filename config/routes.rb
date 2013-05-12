@@ -8,9 +8,7 @@ Faves::Application.routes.draw do
   resources :articles
 
   resources :users do
-    collection do
-      resources :faves
-    end
+    resources :faves
   end
 
   # The priority is based upon order of creation:
