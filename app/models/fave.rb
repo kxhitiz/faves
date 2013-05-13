@@ -7,13 +7,12 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :integer
+#  description :text
 #  page_title  :string(255)
-#  description :string(255)
 #
 
 class Fave < ActiveRecord::Base
-  attr_accessible :url
+  attr_accessible :url,:page_title,:user_id
 
   # associations
-  belongs_to :user, :class_name => User
 end

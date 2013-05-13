@@ -1,10 +1,12 @@
-<div class="hero-unit">
-  <h1>Welcome!</h1>
-  <p>Place for your faves !</p>
-  <% unless current_user  %>
-    <p><%= link_to "Signin", "#",class:'btn btn-primary btn-large' %> 
-    New user ?  <%= link_to "Signup here", "#",class:'text-info' %></p>
-  <% else %>
-    <p>Start adding faves <%= link_to "here", faves_path, class:'text-info' %></p>
-  <% end %>
+<div class='row offset3'>
+  <div class="hero-unit">
+    <h1>Welcome!</h1>
+    <p>Place for your faves !</p>
+    <% unless signed_in? %>
+      <p><%= link_to "Signin", signin_path ,class:'btn btn-primary btn-large' %> 
+      New user ?  <%= link_to "Signup here", signup_path,class:'text-info' %></p>
+    <% else %>
+      <p>Start adding faves <%= link_to "here", faves_path, class:'text-info' %></p>
+    <% end %>
+  </div>
 </div>

@@ -4,7 +4,7 @@ require 'nokogiri'
 class FavesController < ApplicationController
   
   def index
-    @faves = current_user.faves.all
+    @user_faves=Fave.where('user_id=?',current_user.id)
   end
 
   def create
@@ -17,15 +17,21 @@ class FavesController < ApplicationController
     page.user_id=current_user.id
 
     if page.save
-	    redirect_to faves_index_path, :notice => "Successively added one more faves"
+	    redirect_to faves, 
+          :notice => "Successively added one more faves"
     else
-	    redirect_to faves_index_path, :alert => "Failed adding fave list"
+	    redirect_to faves, 
+          :alert => "Failed adding fave list"
     end
   end
 
-  def get_url_title(url)
-    page=Nokogiri::HTML(open(url))
-    page.title
-  end
+  private
+    def get_url_title(url)
+      page=Nokogiri::HTML(open(url))
+      page.title
+    end
 
+  def new
+    @fave=Fave.new
+  end
 end

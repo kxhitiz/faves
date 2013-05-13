@@ -21,16 +21,14 @@
     <%= render 'layouts/header' %>
 
     <div class="container">
-      <div class="row-fluid">
-        <% if current_user %>
-          <%= render 'layouts/sidebar'%>
-        <% end %>
+      <div class="row">
+        <%= render 'layouts/sidebar'%>
 
-        <div class=" <% if current_user %>span9 <% end %>">
-          <%# TODO Needs lookup later %>
+        <%# TODO Needs lookup later %>
+        <div class='span9'>
           <%= bootstrap_flash %>
-          <%= yield %>
         </div>
+        <%= yield %>
       </div><!--/row-->
 
       <%= render 'layouts/footer' %>

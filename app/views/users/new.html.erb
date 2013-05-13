@@ -1,0 +1,26 @@
+<% content_for(:title,'Signup') %>
+<div class="row">
+  <div class="span6 ">
+    <h1>Signup</h1>
+
+    <%= form_for @user do |f| %>
+
+      <%= render 'shared/flash_message' %>
+
+      <%= f.label :name, '' %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email, '' %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, '' %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, '' %>
+      <%= f.password_field :password_confirmation %>
+      <br />
+
+      <%= f.submit "Create account", class:'btn btn-primary btn-large' %>
+    <% end %>
+  </div>
+</div>

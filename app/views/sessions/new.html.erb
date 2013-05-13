@@ -1,0 +1,15 @@
+<%= content_for(:title,"Signin") %>
+<div class='span3'>
+  <h1>Signin</h1>
+
+  <%= form_for(:session,url:sessions_path) do |f| %>
+    <%= f.label :email, '' %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password, '' %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Sign in",class:'btn btn-primary btn-large' %>
+
+  <% end %>
+</div>

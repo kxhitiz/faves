@@ -1,0 +1,21 @@
+<div class="row span9">
+  <%= form_for @fave do |f| %>
+    <h4>
+      Add new favorite
+    </h4>
+    <div class="line">
+      
+    </div>
+    <div >
+      <div class="">
+        <%= f.text_field :url,class:'input-xlarge',placeholder:'Enter url' %>
+        <br />
+
+        <%= f.text_area :description,size:"5x5",placeholder:'Describe it' %>
+        <br />
+
+        <%= f.submit "Add", :class => "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

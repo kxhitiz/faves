@@ -8,12 +8,20 @@ gem 'rails', '3.2.6'
 gem 'rb-readline'
 
 gem 'pry'
-gem 'annotate'
 gem 'nokogiri'
+gem 'bcrypt-ruby','3.0.1'
 
 group :development do
   gem 'guard'
+  gem 'annotate'
   gem 'guard-livereload'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 # postgres adapter
