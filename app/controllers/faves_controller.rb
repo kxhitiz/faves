@@ -17,11 +17,9 @@ class FavesController < ApplicationController
     page.user_id=current_user.id
 
     if page.save
-	    redirect_to faves, 
-          :notice => "Successively added one more faves"
+      redirect_to faves_index_path, :notice => "Successively added one more faves"
     else
-	    redirect_to faves, 
-          :alert => "Failed adding fave list"
+      redirect_to faves_index_path, :alert => "Failed adding fave list"
     end
   end
 
