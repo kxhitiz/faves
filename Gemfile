@@ -8,7 +8,7 @@ gem 'rails', '3.2.6'
 gem 'rb-readline'
 
 gem 'pry'
-gem 'nokogiri'
+gem 'mechanize'
 gem 'bcrypt-ruby','3.0.1'
 
 group :development do

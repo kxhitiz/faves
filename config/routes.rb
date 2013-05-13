@@ -1,5 +1,6 @@
 Faves::Application.routes.draw do
 
+  resources :faves
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -7,13 +8,9 @@ Faves::Application.routes.draw do
   match '/signin', to:'sessions#new'
   match '/signout',to:'sessions#destroy',via: :delete
 
-  get "dashboard/index"
-
-  resources :articles
-
-  resources :users do
-    resources :faves
-  end
+  # resources :users do
+  #   resources :faves
+  # end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
