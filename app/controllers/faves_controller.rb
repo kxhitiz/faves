@@ -32,9 +32,14 @@ class FavesController < ApplicationController
     @fave=Fave.find(params[:id])
   end
 
+  # TODO Send to background
+  # https://github.com/mperham/sidekiq
+  #
   def get_url_title(url)
     browser=Mechanize.new
     browser.get(url).title
+    rescue
+      "URL unavailable"
   end
 
   def destroy
