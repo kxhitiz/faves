@@ -8,6 +8,7 @@
       You dont have any favorites yet.
     </div>
   <% else %>
+	  <%= will_paginate @user_faves %>
     <table class="table " border="0">
       <thead>
         <th>Item</th>
@@ -31,6 +32,7 @@
         <% end %>
       </tbody>
     </table>
+	  <%= will_paginate @user_faves %>
   <% end %>
   <div class="well well-small">
     <%= render 'form' %>

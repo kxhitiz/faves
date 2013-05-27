@@ -3,7 +3,7 @@ require 'mechanize'
 class FavesController < ApplicationController
   
   def index
-    @user_faves=Fave.where('user_id=?',current_user.id).reorder('created_at DESC')
+    @user_faves=Fave.where('user_id=?',current_user.id).reorder('created_at DESC').paginate(page:params[:page],:per_page=>10)
     # binding.pry
     @fave=Fave.new
   end

@@ -10,6 +10,7 @@ gem 'rb-readline'
 gem 'pry'
 gem 'mechanize'
 gem 'bcrypt-ruby','3.0.1'
+gem 'bootstrap-will_paginate'
 
 group :development do
   gem 'guard'
