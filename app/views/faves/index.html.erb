@@ -8,10 +8,10 @@
       You dont have any favorites yet.
     </div>
   <% else %>
-    <table class="table table-striped" border="0">
+    <table class="table " border="0">
       <thead>
         <th>Item</th>
-        <th>Added</th>
+        <th width="95px">Added</th>
         <th width='85px'>Action</th>
       </thead>
       <tbody>
@@ -24,7 +24,7 @@
               <%= truncate fave.description,length:200 %>
               </p>
             </td>
-            <td><%= fave.created_at  %></td>
+			<td><%= fave.created_at.strftime("#{fave.created_at.day.ordinalize} %b, %Y ")  %></td>
             <td>
               <%= link_to "Edit", edit_fave_path(fave), class:'btn btn-mini',style:'margin-right:5px;' %><%= link_to "Delete", fave_path(fave),method: :delete,class:'btn btn-mini' %></td>
           </tr>
