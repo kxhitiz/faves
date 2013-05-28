@@ -27,7 +27,8 @@
             </td>
 			<td><%= fave.created_at.strftime("#{fave.created_at.day.ordinalize} %b, %Y ")  %></td>
             <td>
-              <%= link_to "Edit", edit_fave_path(fave), class:'btn btn-mini',style:'margin-right:5px;' %><%= link_to "Delete", fave_path(fave),method: :delete,class:'btn btn-mini' %></td>
+				<%= link_to "Edit", edit_fave_path(fave), class:'btn btn-mini',style:'margin-right:5px;' %><%= link_to "Delete", fave_path(fave),method: :delete,class:'btn btn-mini',data:{confirm:"Sure ?"} %>
+			</td>
           </tr>
         <% end %>
       </tbody>
