@@ -9,10 +9,17 @@
 .fav-link a{
 	font-size:14px;
 }
+a.fav-edit:hover,a.fav-del:hover{
+	text-decoration:none;
+}
+body{
+	 color:#5a5a5a;
+}
 .fav-desc{
 	height:20px;
 	overflow-y: hidden;
 	margin-bottom: 0;
+	margin-top: 10px;
 }
 .navbar{
   // to make sure navbar doesnt overlap content

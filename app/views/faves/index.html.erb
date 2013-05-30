@@ -1,7 +1,4 @@
 <div class="row span9">
-  <div class="page-header">
-    <h3>List of favorites</h3>  
-  </div>
 
   <% if @user_faves.empty? %>
     <div class="alert alert-info">
@@ -10,11 +7,6 @@
   <% else %>
 	  <%= will_paginate @user_faves %>
     <table class="table " border="0">
-      <thead>
-        <th>Item</th>
-        <th width="95px">Added</th>
-        <th width='85px'>Action</th>
-      </thead>
       <tbody>
         <% @user_faves.each do |fave| %>
           <tr>
@@ -27,7 +19,7 @@
             </td>
 			<td><%= fave.created_at.strftime("#{fave.created_at.day.ordinalize} %b, %Y ")  %></td>
             <td>
-				<%= link_to "Edit", edit_fave_path(fave), class:'btn btn-mini',style:'margin-right:5px;' %><%= link_to "Delete", fave_path(fave),method: :delete,class:'btn btn-mini',data:{confirm:"Sure ?"} %>
+				<%= link_to "<i class='icon-edit'></i>".html_safe, edit_fave_path(fave),class:'fav-edit',style:'margin-right:5px;' %><%= link_to "<i class='icon-remove'></i>".html_safe, fave_path(fave),method: :delete,class:'fav-del',data:{confirm:"Sure ?"} %>
 			</td>
           </tr>
         <% end %>
