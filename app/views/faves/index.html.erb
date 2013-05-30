@@ -18,11 +18,11 @@
       <tbody>
         <% @user_faves.each do |fave| %>
           <tr>
-            <td>
-              <%= link_to truncate(fave.page_title,length:100), fave.url, target: "_blank" %>
+            <td class='fav-link'>
+              <%= link_to truncate(fave.page_title,length:90), fave.url, target: "_blank" %>
               <br />
-              <p class="muted">
-              <%= truncate fave.description,length:200 %>
+              <p class="muted fav-desc">
+              <%= truncate fave.description,length:100 %>
               </p>
             </td>
 			<td><%= fave.created_at.strftime("#{fave.created_at.day.ordinalize} %b, %Y ")  %></td>

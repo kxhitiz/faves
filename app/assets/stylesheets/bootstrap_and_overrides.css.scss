@@ -6,6 +6,14 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.fav-link a{
+	font-size:14px;
+}
+.fav-desc{
+	height:20px;
+	overflow-y: hidden;
+	margin-bottom: 0;
+}
 .navbar{
   // to make sure navbar doesnt overlap content
   margin-bottom:15px;
