@@ -6,7 +6,7 @@
       <p><%= link_to "Signin", signin_path ,class:'btn btn-primary btn-large' %> 
       New user ?  <%= link_to "Signup here", signup_path,class:'text-info' %></p>
     <% else %>
-      <p>Start adding faves <%= link_to "here", faves_path, class:'text-info' %></p>
+      <p>Start adding faves <%= link_to "here", user_faves_path(current_user), class:'text-info' %></p>
     <% end %>
   </div>
 </div>
