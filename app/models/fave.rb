@@ -15,4 +15,5 @@ class Fave < ActiveRecord::Base
   attr_accessible :url,:page_title,:user_id,:description
 
   # associations
+  belongs_to :user
 end

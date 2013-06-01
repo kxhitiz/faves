@@ -3,24 +3,19 @@ require 'mechanize'
 class FavesController < ApplicationController
   
   def index
-    @user_faves=Fave.where('user_id=?',current_user.id).reorder('created_at DESC').paginate(page:params[:page],:per_page=>10)
-    # binding.pry
-    @fave=Fave.new
+    @user_faves = current_user.faves.reorder('created_at DESC').paginate(page:params[:page],:per_page=>10)
+    @fave = current_user.faves.new
   end
 
   def create
-
     # scrape page title
-    page=Fave.new
-    page.url=params["fave"][:url]
-    page.page_title=get_url_title(params["fave"][:url])
-    page.description=params['fave'][:description]
-    page.user_id=current_user.id
+    fave = current_user.faves.new(params["fave"])
+    fave.page_title=get_url_title(fave.url)
 
-    if page.save
-      redirect_to faves_path, :notice => "Successively added one more faves"
+    if fave.save
+      redirect_to user_faves_path(current_user), :notice => "Successively added one more faves"
     else
-      redirect_to faves_path, :alert => "Failed adding fave list"
+      redirect_to user_faves_path(current_user), :alert => "Failed adding fave list"
     end
   end
 
@@ -49,17 +44,17 @@ class FavesController < ApplicationController
     else
       flash[:error]="No such fav"
     end
-    redirect_to faves_path
+    redirect_to user_faves_path(current_user)
   end
 
   def update
     @fave=Fave.find(params[:id])
     if @fave.update_attributes(params[:fave])
       flash[:success]="Updated"
-      redirect_to faves_path
+      redirect_to user_faves_path(current_user)
     else
       flash[:error]="Error updating"
-      redirect_to edit_fav_path(@fave)
+      redirect_to edit_user_fave_path(current_user, @fave)
     end
   end
 end

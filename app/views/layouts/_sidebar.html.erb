@@ -1,10 +1,11 @@
 <div class="span3">
   <div class="well well-small sidebar-nav">
     <ul class="nav nav-list ">
-      <li><%= link_to "Favorites",faves_path %></li>
-      <li><%= link_to "Account", "#"  %></li>
-      <li><%= link_to "Settings", "#"  %></li>
-
+      <% if current_user %>
+        <li><%= link_to "Favorites", user_faves_path(current_user)  %></li>
+        <li><%= link_to "Account", "#"  %></li>
+        <li><%= link_to "Settings", "#"  %></li>
+     <% end %>
       <li class="divider"></li>
 
       <li><%= link_to "Logout", signout_path,method: :delete %></li>

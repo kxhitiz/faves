@@ -3,7 +3,7 @@
 
   <h4><%= yield(:title) %></h4>
   <div class="line"> </div>
-  <%= form_for @fave do |f| %>
+  <%= form_for @fave, :url => user_fave_path(current_user) do |f| %>
 
     <%= f.label :page_title %>
     <%= f.text_field :page_title %>
